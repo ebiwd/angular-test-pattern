@@ -9,8 +9,8 @@ import { environment } from "environments/environment";
 
 @Component({
   selector: 'app-tax-lookup',
-  templateUrl: './tax-lookup.component.html',
-  styleUrls: ['./tax-lookup.component.css']
+  templateUrl: './tax/src/app/tax-lookup/tax-lookup.component.html',
+  styleUrls: ['./tax/src/app/tax-lookup/tax-lookup.component.css']
 })
 export class TaxLookupComponent implements OnInit {
   public asyncSelected: string;
@@ -30,7 +30,7 @@ export class TaxLookupComponent implements OnInit {
 
   public getTaxonsAsObservable(token: string): Observable<any> {
 
-    return this.http.get("http://www.ebi.ac.uk/ena/taxonomy/rest/suggest-for-search/" + token)
+    return this.http.get("//www.ebi.ac.uk/ena/taxonomy/rest/suggest-for-search/" + token)
       .map((res: Response) => res.json())
       .catch(err => {
           // handle errors
